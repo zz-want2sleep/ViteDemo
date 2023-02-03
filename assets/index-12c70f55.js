@@ -1,0 +1,1 @@
+import{_ as e,o,c as a,w as c,B as n,a as r}from"./index-7f1f653a.js";const s={};function _(f,i){const t=n;return o(),a(t,{type:"primary"},{default:c(()=>[r("Primary Button")]),_:1})}const u=e(s,[["render",_]]);export{u as default};

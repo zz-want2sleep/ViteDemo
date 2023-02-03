@@ -1,0 +1,1 @@
+System.register(["./index-legacy-af533545.js"],(function(e,t){"use strict";var r,n,u,c,i,s;return{setters:[e=>{r=e._,n=e.o,u=e.c,c=e.w,i=e.B,s=e.a}],execute:function(){e("default",r({},[["render",function(e,t){const r=i;return n(),u(r,{type:"primary"},{default:c((()=>[s("Primary Button")])),_:1})}]]))}}}));
