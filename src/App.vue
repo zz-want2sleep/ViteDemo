@@ -113,7 +113,7 @@
 
     spanArr.forEach(async (item, index) => {
       let s = item.style;
-      item.classList.add('caret');
+      item.classList.add('caret2');
       item.classList.add('changetowhite');
       await nextTick();
       textDelayList.push(0.3);
@@ -170,9 +170,6 @@
   --var-direction: rtl;
   --var-writing-mode: horizontal-tb;
 }
-</style>
-
-<style scoped lang="less">
 /* 方式一：等宽字体+动画实现 打字 */
 /* 
 解决两个问题
@@ -249,7 +246,7 @@ ch 它表示的是 “0” 字形的宽度，
       color: #fff;
     }
   }
-  @keyframes caret {
+  @keyframes caret2 {
     from {
       border-color: #000;
     }
@@ -269,10 +266,10 @@ ch 它表示的是 “0” 字形的宽度，
       color: #000;
       &.changetowhite{
         // animation: changecolor forwards;
-        &.caret {
+        &.caret2 {
           border-right: 2px solid #000;
           animation: changecolor forwards,
-                      caret;
+                      caret2;
         }
       }
     }
