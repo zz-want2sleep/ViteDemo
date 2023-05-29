@@ -45,6 +45,19 @@
       <div class="item">Item five</div>
     </div>
   </div>
+  <span class="text">foo</span>
+  <div class="grid-container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+  </div>
+  <span class="text">bar</span>
 </template>
 
 <script setup>
@@ -187,49 +200,47 @@ ch 它表示的是 “0” 字形的宽度，
   }
 }
 
-.container {
-  width: 100vw;
-  text-align: center;
-  // 打字动画 方式一
-  h1 {
-    visibility: hidden;
-    margin: 0 auto;
-    font: bold 20px monospace; /* 等宽字体 */
-    /* width: 10ch; */
-    overflow: hidden; /* 隐藏超出部分 */
-    white-space: nowrap; /* 文本不换行 */
-    border-right: 2px solid #000; /* 模拟光标 */
-    
-    /* 使用js来计算字符数量并赋值steps函数 */
-    animation: typing forwards,
-            caret reverse forwards; /* 包括空格和符号，一共10个字符*/
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, var(--var-col));
-    // grid-template-columns: repeat(3, 1fr);
-    // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-auto-rows: minmax(100px, auto);
-    grid-auto-flow: var(--var-packing);
-    direction: var(--var-direction);
-    writing-mode: var(--var-writing-mode);
-    gap: 10px;
-    padding: 1em;
-    // max-width: 30rem;
-    width: 100vw;
-    background-color: aliceblue;
-    .item {
-      background-color: aquamarine;
-      grid: auto / span 1;
+  .container {
+    // width: 100vw;
+    text-align: center;
+    // 打字动画 方式一
+    h1 {
+      visibility: hidden;
+      margin: 0 auto;
+      font: bold 20px monospace; /* 等宽字体 */
+      /* width: 10ch; */
+      overflow: hidden; /* 隐藏超出部分 */
+      white-space: nowrap; /* 文本不换行 */
+      border-right: 2px solid #000; /* 模拟光标 */
+      
+      /* 使用js来计算字符数量并赋值steps函数 */
+      animation: typing forwards,
+              caret reverse forwards; /* 包括空格和符号，一共10个字符*/
     }
-    .col-div {
-      grid-column: auto / span 2;
-      grid-row: auto / span 2;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, var(--var-col));
+      // grid-template-columns: repeat(3, 1fr);
+      // grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-auto-rows: minmax(100px, auto);
+      grid-auto-flow: var(--var-packing);
+      direction: var(--var-direction);
+      writing-mode: var(--var-writing-mode);
+      gap: 10px;
+      padding: 1em;
+      // max-width: 30rem;
+      // width: 100vw;
+      background-color: aliceblue;
+      .item {
+        background-color: aquamarine;
+        grid: auto / span 1;
+      }
+      .col-div {
+        grid-column: auto / span 2;
+        grid-row: auto / span 2;
+      }
     }
   }
-}
-</style>
-<style lang="less">
   @keyframes changecolor {
     from {
       color: #000;
@@ -266,4 +277,60 @@ ch 它表示的是 “0” 字形的宽度，
       }
     }
   }
+  .grid-container {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px 10px;
+    grid-auto-flow: row dense;
+    grid-auto-rows: 50px;
+    grid-auto-columns: 50px;
+    place-items: stretch stretch;
+    place-content: stretch stretch;
+    .item {
+      font-size: 2em;
+      text-align: center;
+      border: 1px solid #181038;
+    }
+
+    .item-1 {
+      background-color: #ef342a;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      // z-index: 1;
+    }
+
+    .item-2 {
+      background-color: #f68f26;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      text-align: center;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .item-3 {
+      background-color: #4ba946;
+    }
+
+    .item-4 {
+      background-color: #0376c2;
+    }
+
+    .item-5 {
+      background-color: #c077af;
+    }
+
+    .item-6 {
+      background-color: #f8d29d;
+    }
+  }
 </style>
+
