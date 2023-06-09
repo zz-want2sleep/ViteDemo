@@ -42,6 +42,7 @@
       <div class="item col-div">Item has more text</div>
       <a-button type="primary" @click="onJump('/3d-case1')">3D</a-button>
       <div class="item">Item four</div>
+      <a-button type="primary" @click="onJump('/css')">CSS</a-button>
       <div class="item">Item five</div>
     </div>
   </div>

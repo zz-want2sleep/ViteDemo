@@ -35,6 +35,18 @@ export default [
                 path: 'case/:id',
                 component: () => import('../views/caseList/dynamics.vue')
             },
+            {
+                name: 'css',
+                path: 'css',
+                component: () => import('../views/css/index.vue'),
+                children: [
+                    {
+                        name: 'action',
+                        path: '/css/action',
+                        component: () => import('../views/css/action/index.vue')
+                    }
+                ]
+            }
         ]
     }
 ]

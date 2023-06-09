@@ -1,4 +1,5 @@
 <template>
+    <!-- 转圈圈 -->
     <div class="round">
     
         <div class="move">

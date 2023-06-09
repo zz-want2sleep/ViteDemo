@@ -14,7 +14,9 @@ export default defineConfig({
   base: "./",
   resolve: {
     // 配置路径别名
-    '@': path.resolve(__dirname, 'src'),
+    alias: {
+      '@': path.resolve(__dirname, './src')
+    },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.vue']
   },
   css: {
